@@ -1,0 +1,26 @@
+package JdkProxyExample.拦截器.责任链模式;
+
+import JdkProxyExample.拦截器.Interceptor;
+
+import java.lang.reflect.Method;
+
+/**
+ * Created by KING on 2017/9/14.
+ */
+public class Interceptor3 implements Interceptor {
+    @Override
+    public boolean before(Object proxy, Object target, Method method, Object[] args) {
+        System.out.println("拦截器【3】：before");
+        return true;
+    }
+
+    @Override
+    public void around(Object proxy, Object target, Method method, Object[] args) {
+        System.out.println("拦截器【3】：around");
+    }
+
+    @Override
+    public void after(Object proxy, Object target, Method method, Object[] args) {
+        System.out.println("拦截器【3】：after");
+    }
+}
